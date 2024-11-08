@@ -1,0 +1,82 @@
+Create DATABASE Bancos3;
+USE Bancos3;
+
+
+CREATE TABLE AgenteDesaude(
+cod VARCHAR(20) NOT NULL,
+senha VARCHAR(5) NOT NULL,
+PRIMARY KEY(cod)
+);
+
+CREATE TABLE Enfermeiro(
+tip VARCHAR(20) NOT NULL,
+senha VARCHAR(5) NOT NULL,
+PRIMARY KEY(tip)
+);
+
+CREATE TABLE Medico(
+id VARCHAR(20) NOT NULL,
+senha VARCHAR(5) NOT NULL,
+função INTEGER NOT NULL CHECK (função BETWEEN 1 AND 5) ,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE Paciente(
+nome VARCHAR(30) NOT NULL,
+documento VARCHAR(12) NOT NULL,
+númerocartãosus VARCHAR(15) NOT NULL,
+id VARCHAR(20) NOT NULL,
+cod VARCHAR(20) NOT NULL,
+tip VARCHAR(20) NOT NULL,
+PRIMARY KEY(documento),
+FOREIGN KEY(id) REFERENCES Medico(id),
+FOREIGN KEY(cod) REFERENCES AgenteDesaude(cod),
+FOREIGN KEY(tip) REFERENCES Enfermeiro(tip)
+);
+
+CREATE TABLE Exame(
+ex VARCHAR(20) NOT NULL,
+prescrição VARCHAR(30) NOT NULL,
+doc VARCHAR(12) NOT NULL,
+relatório VARCHAR(30) NOT NULL,
+documento VARCHAR(12) NOT NULL,
+PRIMARY KEY(ex),
+FOREIGN KEY(documento) REFERENCES Paciente(documento)
+);
+
+CREATE TABLE Enfermidade(
+en VARCHAR(30) NOT NULL,
+tipo VARCHAR(30) NOT NULL,
+documen VARCHAR(12) NOT NULL,
+criacao DATE NOT NULL,
+documento VARCHAR(12) NOT NULL,
+PRIMARY KEY(en),
+FOREIGN KEY(documento) REFERENCES Paciente(documento)
+);
+
+CREATE TABLE CausaAtendimento(
+caus VARCHAR(30) NOT NULL,
+dct VARCHAR(12) NOT NULL,
+criacao DATE NOT NULL,
+documento VARCHAR(12) NOT NULL,
+PRIMARY KEY(caus),
+FOREIGN KEY(documento) REFERENCES Paciente(documento)
+);
+
+CREATE TABLE FichaMedica(
+fich VARCHAR(30) NOT NULL,
+criacao DATE NOT NULL,
+dto VARCHAR(12) NOT NULL,
+documento VARCHAR(12) NOT NULL,
+PRIMARY KEY(fich),
+FOREIGN KEY(documento) REFERENCES Paciente(documento)
+);
+
+CREATE TABLE Prontuario(
+pront VARCHAR(30) NOT NULL,
+criacao DATE NOT NULL,
+dpt VARCHAR(12) NOT NULL,
+documento VARCHAR(12) NOT NULL,
+PRIMARY KEY(pront),
+FOREIGN KEY(documento) REFERENCES Paciente(documento)
+);

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de pacientes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="main-container">
+      <h1>Cadastrar paciente</h1>
+      <form id="register-form">
+          <div class="full-box">
+             <label for="name">Nome</label>
+              <input type="text" name="name" id="name" placeholder="Digite o nome do paciente">
+          </div>
+          <div class="full-box">
+            <label for="lastname">Sobrenome</label>
+             <input type="text" name="lastname" id="lastname" placeholder="Sobrenome do paciente">
+         </div>
+         <div class="half-box">
+            <label for="number">RG</label>
+             <input type="number" name="RG" id="RG" placeholder="Ex:00.000.000-0">
+         </div>
+         <div class="half-box">
+            <label for="number">CPF</label>
+             <input type="number" name="CPF" id="CPF" placeholder="Ex: 000.000.000-00">
+         </div>
+         <div class="full-box">
+            <label for="numSUS">Número Cartão SUS</label>
+             <input type="number" name="numSUS" id="numSUS" placeholder="Ex: 000.0000.0000.0000">
+         </div>
+         <div class="half-box">
+            <label for="date">Data</label>
+             <input type="date" name="Data" id="Data" placeholder="Ex: dd/dd/dd">
+         </div>
+         <div class="full-box">
+            <label for="phone">Telefone</label>
+             <input type="tel" name="phone" id="phone" placeholder="Ex: 00000-0000">
+         </div>
+         <div class="half-box">
+            <label for="cep">CEP</label>
+             <input type="number" name="CEP" id="CEP" placeholder="Ex: 00000-000">
+         </div>
+         <div class="full-box">
+            <label for="name">Nome do Pai</label>
+             <input type="text" name="name" id="name" placeholder="Digite o nome do pai">
+         </div>
+         <div class="full-box">
+            <label for="name">Nome da Mãe</label>
+             <input type="text" name="name" id="name" placeholder="Digite o nome da mãe">
+         </div>
+      </form>
+      <div id="register-container">
+        <p>Cadastrar paciente</p>
+        <a href="#">cadastrar</a>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
